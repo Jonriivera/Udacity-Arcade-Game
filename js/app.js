@@ -43,11 +43,11 @@ Player.prototype.handleInput = function(keyPress) {
     this.y -= 100;
   };
 
-  if (keyPress === 'down' && this.y < 500) {
+  if (keyPress === 'down' && this.y < 400) {
     this.y += 100;
   };
 
-  if (keyPress === 'right' && this.x < 500) {
+  if (keyPress === 'right' && this.x < 400) {
     this.x += 100;
   };
 
