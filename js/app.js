@@ -40,11 +40,11 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(keyPress) {
 
   if (keyPress === 'up' && this.y > 0) {
-    this.y -= 100;
+    this.y -= 85;
   };
 
   if (keyPress === 'down' && this.y < 400) {
-    this.y += 100;
+    this.y += 85;
   };
 
   if (keyPress === 'right' && this.x < 400) {
@@ -63,7 +63,7 @@ Player.prototype.handleInput = function(keyPress) {
 
 
 var allEnemies = [];
-var eCoordinates = [100, 200, 300];
+var eCoordinates = [60, 145, 225];
 
 eCoordinates.forEach(function(y) {
   var enemy = new Enemy(0, y, 100 + Math.floor(Math.random() * 300)); // creates new enemy with x, y, and speed
