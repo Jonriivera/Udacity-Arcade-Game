@@ -10,7 +10,7 @@ Download all the files, and open index.html in your favorite browser!
 
 Use the arrows keys to move the player.
 
-The up key will move the player up.
-The down key will move the player down.
-The left key will move the player left.
-The right key will move the player right.
+The up key will move the player up. <br />
+The down key will move the player down. <br />
+The left key will move the player left. <br />
+The right key will move the player right. <br />
