@@ -21,7 +21,7 @@ Enemy.prototype.update = function(dt) {
     50 + player.y > this.y) {
     player.x = 200;
     player.y = 400;
-};
+  };
 };
 
 
@@ -37,11 +37,10 @@ var Player = function(x, y) {
 };
 
 Player.prototype.update = function(dt) {
-
 };
 
 Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // handles the input the player makes with the arrow keys
