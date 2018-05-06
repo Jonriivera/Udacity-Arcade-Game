@@ -1,12 +1,12 @@
-#Udacity Arcade game clone
+# Udacity Arcade game clone
 
 This is a frogger like game coded using JavaScript. The players objective is to reach the end with out getting tagged by bugs and being sent back to the start.
 
-##How to get to open the game
+## How to get to open the game
 
 Download all the files, and open index.html in your favorite browser!
 
-##How to play the game
+## How to play the game
 
 Use the arrows keys to move the player.
 
