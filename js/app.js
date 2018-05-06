@@ -8,13 +8,20 @@ var Enemy = function (x, y, speed) {
 
 Enemy.prototype.update = function(dt) {
 
-  this.x += this.speed * dt;
+  this.x += this.speed * dt; // multiplied by delta time to make speed, the same speed for everyone
 
-  if (this.x > 510) {
+  if (this.x > 510) { // allows the enemeny to go off map and reset
     this.x = -50;
-    this.speed = 100 + Math.floor(Math.random() * 100);
+    this.speed = 100 + Math.floor(Math.random() * 300);
   }
 
+  if (player.x < this.x +70 && // collision detection with the player.
+    player.x + 70 > this.x &&
+    player.y < this.y + 50 &&
+    50 + player.y > this.y) {
+    player.x = 200;
+    player.y = 400;
+};
 };
 
 
@@ -37,6 +44,7 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// handles the input the player makes with the arrow keys
 Player.prototype.handleInput = function(keyPress) {
 
   if (keyPress === 'up' && this.y > 0) {
@@ -55,22 +63,22 @@ Player.prototype.handleInput = function(keyPress) {
     this.x -= 100;
   };
 
-  if (this.y < 0) {
+  if (this.y < 0) { // check for if the player reaches the end and resets the player.
     this.x = 200;
     this.y = 400;
   };
 };
 
 
-var allEnemies = [];
-var eCoordinates = [60, 145, 225];
+var allEnemies = []; // array for enemy objects to be pushed into
+var eCoordinates = [60, 145, 225]; // array for Y coordinates of enemys
 
-eCoordinates.forEach(function(y) {
-  var enemy = new Enemy(0, y, 100 + Math.floor(Math.random() * 300)); // creates new enemy with x, y, and speed
+eCoordinates.forEach(function(y) { // creates new enemys to be pushed into an array
+  var enemy = new Enemy(0, y, 100 + Math.floor(Math.random() * 300));
   allEnemies.push(enemy);
 });
 
-var player = new Player(200, 400);
+var player = new Player(200, 400); // new player coordinates
 
 document.addEventListener('keyup', function(e) {
   var allowedKeys = {
