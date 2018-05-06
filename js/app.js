@@ -12,7 +12,7 @@ Enemy.prototype.update = function(dt) {
 
   if (this.x > 510) { // allows the enemeny to go off map and reset
     this.x = -50;
-    this.speed = 100 + Math.floor(Math.random() * 300);
+    this.speed = 300 + Math.floor(Math.random() * 300);
   }
 
   if (player.x < this.x +70 && // collision detection with the player.
@@ -65,6 +65,7 @@ Player.prototype.handleInput = function(keyPress) {
   if (this.y < 0) { // check for if the player reaches the end and resets the player.
     this.x = 200;
     this.y = 400;
+    alert('You have reached the goal! Want to play again?')
   };
 };
 
@@ -73,7 +74,7 @@ var allEnemies = []; // array for enemy objects to be pushed into
 var eCoordinates = [60, 145, 225]; // array for Y coordinates of enemys
 
 eCoordinates.forEach(function(y) { // creates new enemys to be pushed into an array
-  var enemy = new Enemy(0, y, 100 + Math.floor(Math.random() * 300));
+  var enemy = new Enemy(0, y, 300 + Math.floor(Math.random() * 300));
   allEnemies.push(enemy);
 });
 
